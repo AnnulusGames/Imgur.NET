@@ -7,7 +7,7 @@
     <LangVersion>12</LangVersion>
 		<!-- NuGet Packaging -->
     <Version>0.1.0</Version>
-		<PackageId>Imgur.NET<PackageId>
+		<PackageId>Imgur.NET</PackageId>
 		<PackageTags>Imgur;</PackageTags>
 		<Description>Imgur API client for .NET and Unity.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
