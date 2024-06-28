@@ -49,7 +49,7 @@ using var client = new ImgurClient
 var image = await File.ReadAllBytesAsync("image.png");
 
 // 画像をアップロード
-var response = await client.Images.UploadAsync(new()
+var response = await client.Image.UploadAsync(new()
 {
     ImageData = image,
     ImageContentType = ImageContentType.Raw,
