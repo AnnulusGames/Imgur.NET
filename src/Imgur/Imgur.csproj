@@ -8,11 +8,13 @@
 		<!-- NuGet Packaging -->
     <Version>0.1.0</Version>
 		<PackageId>Imgur.NET</PackageId>
+    <Authors>Annulus games</Authors>
 		<PackageTags>Imgur;</PackageTags>
 		<Description>Imgur API client for .NET and Unity.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <RepositoryUrl>https://github.com/AnnulusGames/Imgur.NET</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/AnnulusGames/Imgur.NET</PackageProjectUrl>
+    <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
