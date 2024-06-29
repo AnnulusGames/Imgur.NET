@@ -76,18 +76,7 @@ public partial class ImgurClient : IImage
         var message = new HttpRequestMessage(HttpMethod.Post, requestUri);
         AddAuthorizationHeader(message);
 
-        var content = new MultipartFormDataContent
-        {
-            { new StringContent(request.Type.ToString()), "type" },
-        };
-
-        if (request.Image.Stream != null) content.Add(new StreamContent(request.Image.Stream), "image");
-        else if (request.Image.Bytes != null) content.Add(new ByteArrayContent(request.Image.Bytes), "image");
-        else if (request.Image.Text != null) content.Add(new StringContent(request.Image.Text), "image");
-
-        if (request.Title != null) content.Add(new StringContent(request.Title), "title");
-        if (request.Description != null) content.Add(new StringContent(request.Description), "description");
-
+        var content = CreateJsonContent(request);
         message.Content = content;
 
         var response = await httpClient.SendAsync(message, cancellationToken)
@@ -111,11 +100,7 @@ public partial class ImgurClient : IImage
         var message = new HttpRequestMessage(HttpMethod.Post, requestUri);
         AddAuthorizationHeader(message);
 
-        var content = new MultipartFormDataContent();
-
-        if (request.Title != null) content.Add(new StringContent(request.Title), "title");
-        if (request.Description != null) content.Add(new StringContent(request.Description), "description");
-
+        var content = CreateJsonContent(request);
         message.Content = content;
 
         var response = await httpClient.SendAsync(message, cancellationToken)

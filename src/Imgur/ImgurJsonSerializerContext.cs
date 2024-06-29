@@ -21,6 +21,7 @@ namespace Imgur;
 [JsonSerializable(typeof(Topic))]
 [JsonSerializable(typeof(Vote))]
 [JsonSerializable(typeof(ProExpiration))]
+[JsonSerializable(typeof(UploadImageRequest))]
 [JsonSerializable(typeof(CreateAlbumRequest))]
 [JsonSerializable(typeof(CreateCommentRequest))]
 [JsonSerializable(typeof(GenerateAccessTokenResponse))]
@@ -40,5 +41,8 @@ namespace Imgur;
 [JsonSerializable(typeof(ImgurResponse<Image>))]
 [JsonSerializable(typeof(ImgurResponse<Image[]>))]
 [JsonSerializable(typeof(ImgurResponse<bool>))]
-[JsonSourceGenerationOptions(DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull, UseStringEnumConverter = true)]
+[JsonSourceGenerationOptions(
+    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull, 
+    UseStringEnumConverter = true,
+    Converters = [typeof(ImageContentJsonConverter)])]
 public partial class ImgurJsonSerializerContext : JsonSerializerContext;

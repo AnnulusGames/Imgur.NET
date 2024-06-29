@@ -1,5 +1,4 @@
 using System.Runtime.Serialization;
-using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Imgur;
@@ -20,46 +19,20 @@ public record GetImageRequest
 
 public record UploadImageRequest
 {
+    [JsonPropertyName("image")]
     public required ImageContent Image { get; init; }
-    public required ImageContentType Type { get; init; }
+
+    [JsonPropertyName("type")]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public ImageContentType? Type { get; init; }
+
+    [JsonPropertyName("title")]
     public string? Title { get; init; }
+
+    [JsonPropertyName("description")]
     public string? Description { get; init; }
 }
 
-public record ImageContent
-{
-    public Stream? Stream { get; private init; }
-    public byte[]? Bytes { get; private init; }
-    public string? Text { get; private init; }
-
-    ImageContent()
-    {
-    }
-
-    public static implicit operator ImageContent(Stream stream)
-    {
-        return new ImageContent
-        {
-            Stream = stream
-        };
-    }
-
-    public static implicit operator ImageContent(byte[] bytes)
-    {
-        return new ImageContent
-        {
-            Bytes = bytes
-        };
-    }
-
-    public static implicit operator ImageContent(string text)
-    {
-        return new ImageContent
-        {
-            Text = text
-        };
-    }
-}
 
 public enum ImageContentType
 {
@@ -80,8 +53,13 @@ public record DeleteImageRequest
 
 public record UploadImageInformationRequest
 {
+    [JsonIgnore]
     public required string ImageHash { get; init; }
+
+    [JsonPropertyName("title")]
     public string? Title { get; init; }
+
+    [JsonPropertyName("description")]
     public string? Description { get; init; }
 }
 
