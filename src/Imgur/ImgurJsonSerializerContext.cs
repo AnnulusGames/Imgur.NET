@@ -22,6 +22,7 @@ namespace Imgur;
 [JsonSerializable(typeof(Vote))]
 [JsonSerializable(typeof(ProExpiration))]
 [JsonSerializable(typeof(UploadImageRequest))]
+[JsonSerializable(typeof(UploadImageInformationRequest))]
 [JsonSerializable(typeof(CreateAlbumRequest))]
 [JsonSerializable(typeof(CreateCommentRequest))]
 [JsonSerializable(typeof(GenerateAccessTokenResponse))]
