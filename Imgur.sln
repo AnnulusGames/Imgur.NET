@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E9AEA275-5F7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imgur", "src\Imgur\Imgur.csproj", "{F98A081F-FA78-4FB8-9269-38AB17BAF388}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sandbox", "sandbox", "{4ED78F9E-D791-4D5B-B502-ED893B730342}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "sandbox\ConsoleApp1\ConsoleApp1.csproj", "{A340E1DF-C6F7-42CD-936A-B94187319576}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +24,13 @@ Global
 		{F98A081F-FA78-4FB8-9269-38AB17BAF388}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F98A081F-FA78-4FB8-9269-38AB17BAF388}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F98A081F-FA78-4FB8-9269-38AB17BAF388}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A340E1DF-C6F7-42CD-936A-B94187319576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A340E1DF-C6F7-42CD-936A-B94187319576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A340E1DF-C6F7-42CD-936A-B94187319576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A340E1DF-C6F7-42CD-936A-B94187319576}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F98A081F-FA78-4FB8-9269-38AB17BAF388} = {E9AEA275-5F73-4AFF-80C6-940E4E1100EA}
+		{A340E1DF-C6F7-42CD-936A-B94187319576} = {4ED78F9E-D791-4D5B-B502-ED893B730342}
 	EndGlobalSection
 EndGlobal
